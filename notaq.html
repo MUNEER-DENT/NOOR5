@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدمة ناطق NOOR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="notaq-page">
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="NOOR Logo">
+        </div>
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="homework.html">حل الواجبات</a></li>
+                <li><a href="services.html">الخدمات الإلكترونية</a></li>
+                <li><a href="cv-design.html">تصميم السيرة الذاتية</a></li>
+                <li><a href="notaq.html">خدمة ناطق NOOR</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>خدمة ناطق NOOR</h1>
+            <p>توفر هذه الخدمة إمكانية إدخال نصوص باللغة الإنجليزية والحصول على ترجمتها إلى اللغة العربية.</p>
+            <form>
+                <label for="input-text">النص بالإنجليزية:</label><br>
+                <textarea id="input-text" rows="5" cols="50" placeholder="أدخل النص هنا..."></textarea><br><br>
+                <button type="button" onclick="translateText()">ترجمة</button>
+            </form>
+            <div>
+                <label for="output-text">النص المترجم:</label><br>
+                <textarea id="output-text" rows="5" cols="50" readonly placeholder="ستظهر الترجمة هنا..."></textarea>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="social-links">
+            <a href="https://wa.me/message/BLCTQXILBAV5M1" target="_blank">
+                <img src="whatsapp.png" alt="WhatsApp">
+            </a>
+            <a href="https://t.me/Noor_teacher2" target="_blank">
+                <img src="telegram.png" alt="Telegram">
+            </a>
+        </div>
+        <p>© 2024 موقع NOOR</p>
+    </footer>
+    <script>
+        function translateText() {
+            const inputText = document.getElementById('input-text').value;
+            const outputText = document.getElementById('output-text');
+
+            if (inputText.trim() === "") {
+                outputText.value = "يرجى إدخال نص للترجمة.";
+            } else {
+                outputText.value = "ترجمة محاكاة: " + inputText;
+            }
+        }
+    </script>
+</body>
+</html>

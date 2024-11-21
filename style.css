@@ -1,0 +1,262 @@
+
+
+/* التعديلات العامة للعناصر المختلفة لتكون متجاوبة */
+
+/* Media Queries لتحديد التنسيقات للشاشات الأصغر (أجهزة الجوال) */
+@media only screen and (max-width: 768px) {
+    header {
+        flex-direction: column; /* جعل الهيدر عموديًا بدلاً من أفقي لتجنب التزاحم */
+        align-items: center; /* محاذاة العناصر في الوسط */
+    }
+
+    .logo {
+        margin-bottom: 10px; /* إضافة مسافة أسفل الشعار ليبدو أفضل عند التزاحم */
+    }
+
+    .navbar {
+        flex-direction: column; /* ترتيب الروابط بشكل عمودي بدلاً من أفقي للشاشات الصغيرة */
+        gap: 10px; /* تقليل المسافة بين الروابط لتلائم المساحة الأصغر */
+    }
+
+    .main-image-section img {
+        width: 90%; /* جعل الصورة تأخذ 90% من عرض الشاشة للشاشات الصغيرة */
+    }
+
+    .content {
+        flex-direction: column; /* جعل النص والصورة مرتبين بشكل عمودي على الجوالات */
+        text-align: center; /* جعل النص في وسط الشاشة */
+        margin: 20px; /* تقليل الهامش لتلائم الشاشة الصغيرة */
+    }
+
+    .portfolio .images {
+        flex-direction: column; /* عرض الصور بشكل عمودي للشاشات الأصغر */
+        align-items: center; /* محاذاة الصور في الوسط */
+    }
+}
+
+
+/* قسم الصورة في الصفحة الرئيسية */
+.main-image-section {
+    display: flex; /* استخدام Flexbox لوضع العناصر في المنتصف */
+    justify-content: center; /* محاذاة العنصر أفقيًا في المنتصف */
+    align-items: center; /* محاذاة العنصر عموديًا في المنتصف */
+  
+   
+}
+
+
+
+/* تأثير على أيقونات وسائل التواصل الاجتماعي */
+.social-links img {
+    transition: transform 0.3s ease, filter 0.3s ease; /* تأثيرات سلسة على التكبير والإضاءة */
+}
+
+.social-links img:hover {
+    transform: scale(1.1); /* تكبير الأيقونة بنسبة 10% عند التمرير */
+    filter: brightness(1.3); /* زيادة سطوع الأيقونة بنسبة 30% عند التمرير */
+}
+
+
+
+
+/* إعدادات عامة */
+body {
+    font-family: "Cairo", sans-serif;
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    background-color: #e9f5e9; /* خلفية خضراء باهتة */
+    color: #333; /* لون النص الافتراضي */
+}
+
+/* هيدر الموقع */
+header {
+    display: flex;
+    justify-content: center; /* جعل المحتوى في المنتصف */
+    align-items: center;
+    background-color: #2d6a2d; /* أخضر غامق */
+    padding: 15px 20px;
+    position: relative; /* لتثبيت الشعار في المكان المطلوب */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ظل خفيف للهيدر */
+}
+
+/* شعار الموقع */
+header .logo {
+    position: absolute;
+    left: 20px; /* وضع الشعار على اليسار */
+}
+
+header .logo img {
+    width: 80px; /* عرض الشعار */
+    height: auto; /* الحفاظ على نسبة الأبعاد */
+}
+
+/* شريط التنقل */
+.navbar {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* مسافة بين الروابط */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); /* ظل خفيف حول الروابط */
+}
+
+.navbar li a:hover {
+    background-color: #228b22; /* لون أخضر فاتح عند التمرير */
+    color: #ffd700; /* لون ذهبي للنص */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* تكبير الظل عند التمرير */
+}
+
+/* تنسيق النص والصورة في نفس السطر */
+.content {
+    display: flex; /* عرض النص والصورة بجانب بعض */
+    align-items: center; /* محاذاة عمودية للنص والصورة */
+    justify-content: flex-start; /* النص على اليمين والصورة على اليسار */
+    gap: 20px; /* مسافة بين النص والصورة */
+    margin: 50px; /* مسافة عن الأطراف */
+}
+
+/* النص في صفحة الواجبات */
+.text-section {
+    text-align: right; /* النص في اليمين */
+    max-width: 50%; /* عرض النص لا يتجاوز 50% من المساحة */
+}
+
+.text-section h1 {
+    font-size: 36px; /* حجم كبير للعنوان */
+    font-weight: bold; /* خط عريض */
+    color: #2d6a2d; /* لون أخضر */
+    margin-bottom: 15px; /* مسافة تحت العنوان */
+}
+
+.text-section p {
+    font-size: 20px; /* حجم النص أكبر */
+    line-height: 1.8; /* مسافة بين السطور */
+    color: #555; /* لون رمادي للنص */
+}
+
+/* تنسيق الصورة */
+.image-section img {
+    width: 400px; /* حجم كبير للصورة */
+    height: auto; /* الحفاظ على نسبة الأبعاد */
+    border: 3px solid #2d6a2d; /* إطار أخضر */
+    border-radius: 10px; /* زوايا ناعمة */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* ظل خفيف */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; /* تأثيرات الحركة */
+    cursor: pointer; /* مؤشر اليد عند التمرير */
+}
+
+.image-section img:hover {
+    transform: scale(1.1); /* تكبير الصورة قليلاً عند التمرير */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* زيادة الظل */
+    filter: brightness(1.2); /* زيادة الإضاءة */
+}
+
+.image-section img:active {
+    transform: scale(1.2); /* تكبير إضافي عند الضغط */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); /* ظل أعمق */
+}
+
+/* تصميم الأقسام */
+section {
+    background-color: white; /* خلفية بيضاء للأقسام */
+    border: 2px solid #2d6a2d; /* إطار أخضر غامق */
+    border-radius: 10px; /* زوايا ناعمة */
+    padding: 20px;
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+}
+
+/* الفوتر */
+footer {
+    background-color: #2d6a2d; /* أخضر غامق */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* أيقونات وسائل التواصل الاجتماعي في الفوتر */
+footer .social-links img {
+    width: 40px; /* تحديد عرض الأيقونات */
+    height: 40px; /* تحديد ارتفاع الأيقونات */
+    object-fit: contain; /* التأكد من تناسق الصورة داخل الإطار */
+    margin: 5px; /* مسافة بين الأيقونات */
+}
+
+/* تخصيص خلفيات الصفحات الفرعية */
+.homework-page,
+.services-page,
+.cv-design-page,
+.notaq-page {
+    background-color: #e9f5e9; /* نفس الخلفية الخضراء الباهتة */
+    color: #333; /* لون النص */
+}
+
+/* تخصيص خلفية الصفحة الرئيسية */
+.index-page {
+    background-color: #2d6a2d; /* أخضر غامق للخلفية */
+    color: white; /* لون النص */
+}
+
+/* قسم النماذج */
+.portfolio {
+    margin: 30px auto; /* مركز القسم في الصفحة */
+    text-align: center; /* محاذاة النص للوسط */
+}
+
+.portfolio h2 {
+    font-size: 24px; /* حجم متوسط لعنوان القسم */
+    color: #2d6a2d; /* لون العنوان الأخضر الداكن */
+    margin-bottom: 20px; /* مسافة أسفل العنوان */
+}
+
+.portfolio .images {
+    display: flex; /* استخدام Flexbox لترتيب الصور أفقيًا */
+    justify-content: center; /* محاذاة الصور إلى الوسط */
+    gap: 20px; /* مسافة بين الصور */
+    flex-wrap: wrap; /* السماح للصور بالانتقال إلى السطر التالي عند عدم كفاية المساحة */
+}
+
+.portfolio .images img {
+    width: 250px; /* عرض مضبوط للصور لتجنب كبر الحجم الزائد */
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+    border: 2px solid #2d6a2d; /* إطار أخضر حول الصور */
+    border-radius: 10px; /* زوايا دائرية للصور */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ظل خفيف للصور لإعطاء إحساس بالأبعاد */
+    transition: transform 0.3s, box-shadow 0.3s, filter 0.3s; /* تأثيرات الانتقال السلس على الصورة */
+    cursor: pointer; /* تغيير المؤشر إلى يد عند التمرير فوق الصور */
+}
+
+.portfolio .images img:hover {
+    transform: scale(1.1); /* تكبير الصورة قليلاً عند التمرير */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* زيادة الظل عند التمرير */
+    filter: brightness(1.2); /* زيادة سطوع الصورة عند التمرير */
+}
+
+
+
+
+.interactive-image {
+    width: 40%; /* تغيير عرض الصورة ليصبح أصغر، يمكنك تعديل القيمة بما يناسبك */
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; /* تأثيرات سلسة على التكبير والإضاءة */
+}
+
+.interactive-image:hover {
+    transform: scale(1.05); /* تكبير الصورة قليلاً عند التمرير */
+    filter: brightness(1.1); /* زيادة سطوع الصورة عند التمرير */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* زيادة الظل لإعطاء تأثير العمق عند التمرير */
+}
+
+
